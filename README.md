@@ -31,7 +31,7 @@ Mô hình hoạt động chung của phương pháp machine learning được th
 
 bên dưới.
 
-Hình 2 Phương Pháp Machine learning cơ bản 
+![Hình 2 Phương Pháp Machine learning cơ bản ](img/2.jpg)
 
 Ta có thể thấy Machine Learning gồm hai giai đoạn chính là Huấn luyện - Training và Thử nghiệm - Testing, trong mỗi giai đoạn đều sử dụng hai thành phần quan trọng  nhất do người xử lý bài toán thiết kế, đó là Trích chọn đặc trưng - Feature  Engineering (hay còn gọi là Feature Extraction) và Thuật toán phân loại, nhận dạng... Algorithms. Hai thành phần này có ảnh hưởng trực tiếp đến kết quả bài toán, vì thế  được thiết kế rất cẩn thận, tốn nhiều thời gian, đòi hỏi người thiết kế phải có kiến thức chuyên môn và nắm rõ đặc điểm của bài toán cần xử lý.
 
@@ -61,7 +61,7 @@ khác nhau và theo mức độ trừu tượng nâng cao dần.
 
 Sự khác nhau cơ bản giữa học ,máy truyền thống và học sâu được thể hiện như hình bên dưới
 
-Hình 3 So sánh 2 phương pháp học máy truyền thống và học sâu
+![!Hình 3 So sánh 2 phương pháp học máy truyền thống và học sâu](img/33.jpg)
 
 1.5. Mục tiêu
 
@@ -90,7 +90,7 @@ Chương 2: Cơ sở lý thuyết
 Object detection
 
 Nhận diện đối tượng (Object Detection) là bài toán liên quan đến  và . Đây là quá trình sử dụng trí tuệ nhân tạo để xác định và phân loại các vật thể khác nhau trong hình ảnh hoặc video. Thay vì chỉ nhận ra một đối tượng, nhận diện đối tượng có khả năng xác định nhiều đối tượng khác nhau cùng một lúc, đồng thời gán nhãn và xác định vị trí của chúng.
-
+![](img/44.jpg)
 Ý tưởng
 
  riêng giúp phân loại lớp – ví dụ tất cả  đều tròn. Phát hiện lớp đối tượng sử dụng các đặc điểm riêng này. 
@@ -142,7 +142,7 @@ YOLO là chữ viết tắt của thuật ngữ “You Only Look Once”. Đây 
 Cách YOLO hoạt động
 
 Đầu vào của mô hình là một ảnh, mô hình sẽ nhận dạng ảnh đó có đối tượng nào hay không, sau đó sẽ xác định tọa độ của đối tượng trong bức ảnh. Ảnh đầu vào được chia thành thành S×S ô lưới  thường thì sẽ là 3×3, 7×7 ,9×9... việc chia ô này có ảnh hưởng tới việc mô hình phát hiện đối tượng, Mỗi ô lưới sẽ chịu trách nhiệm dự đoán các bounding boxes (hộp giới hạn), Mỗi bounding box cần 5 giá trị để mô tả thông tin gồm ( x – Tọa độ trung tâm của bounding box so với ô lưới. y – Tọa độ trung tâm của bounding box so với ô lưới. w – Chiều rộng của bounding box (chuẩn hóa theo kích thước ảnh). h – Chiều cao của bounding box (chuẩn hóa theo kích thước ảnh) (Confidence Score – Mức độ tin cậy của mô hình ). và class scores (Xác suất của các lớp vật thể) cho đối tượng nằm bên trong nó. 
-
+![](img/55.jpg)
 Với Input là 1 ảnh, đầu ra mô hình là một ma trận 3 chiều có kích thước: S×S×(5×N+M)
 
 Với tham số  mỗi ô là :	(5×N+M) với 
@@ -161,7 +161,7 @@ Hàm tính IOU
 Khi xử lý tác vụ phát hiện như một phương pháp hồi quy một lần để xác định các hộp giới hạn, các mô hình YOLO thường rất nhanh và rất nhỏ – thường khiến chúng nhanh được đào tạo hơn và dễ triển khai hơn, đặc biệt là đối với các thiết bị biên có giới hạn về khả năng tính toán
 
 IoU (Intersection over Union) là hàm đánh giá độ chính xác của object detector trên tập dữ liệu cụ thể. IoU được tính bằng:
-
+![](img/6.jpg)
 Ta có Arena of Overlap là phần diện tích giao nhau giữa predicted bounding box (hộp dự đoán)với ground-truth bounding box (hộp thực tế), còn Area of Union là diện tích phần hợp giữa  predicted bounding box với grouth-truth bounding box( không tính phần diện tích bị trùng) với công thức:
 
 (Area of Union=Area of Predicted Box+Area of Ground-Truth Box−Area of Overlap.)
@@ -173,7 +173,7 @@ Kiến trúc mạng YOLO
 Kiến trúc YOLO bao gồm: base network là các mạng convolution làm nhiệm vụ trích xuất đặc trưng. Phần phía sau là những Extra Layers được áp dụng để phát hiện vật thể trên feature map của base network.
 
 base network của YOLO sử dụng chủ yếu là các convolutional layer và các fully conntected layer. Các kiến trúc YOLO cũng khá đa dạng và có thể tùy biến thành các version cho nhiều input shape khác nhau.
-
+![](img/7.jpg)
 Sơ đồ kiến trúc mạng YOLO. Thành phần Darknet Architechture được gọi là base network có tác dụng trích suất đặc trưng. Output của base network là một feature map có kích thước 7x7x1024 sẽ được sử dụng làm input cho các Extra layers có tác dụng dự đoán nhãn và tọa độ bounding box của vật thể.
 
 Output của YOLO
@@ -191,7 +191,7 @@ Với:
 Như vậy output sẽ được xác định theo số lượng classes theo công thức:  
 
  Nếu huấn luyện 80 classes thì bạn sẽ có output là 85. Trường hợp bạn áp dụng 3 anchors/cell thì số lượng tham số output sẽ là: 
-
+![](img/88.jpg)
 Hình ảnh gốc là một feature map kích thước 13x13. Trên mỗi một cell của feature map chúng ta lựa chọn ra 3 anchor boxes với kích thước khác nhau lần lượt là Box 1, Box 2, Box 3 sao cho tâm của các anchor boxes trùng với cell. Khi đó output của YOLO là một véc tơ concatenate của 3 bounding boxes. Các attributes của một bounding box được mô tả như dòng cuối cùng trong hình.
 
  Loss Function
@@ -347,7 +347,7 @@ Banana:
 P = 94.1%, R = 91.7%; mAP50–95 = 85.1%.
 
 Độ bao phủ và mAP thấp hơn hai lớp kia — cho thấy lớp Chuối khó phát hiện hơn.
-
+![](img/99.jpg)
 Với results/train:
 
 Biểu đồ trên là kết quả huấn luyện và đánh giá mô hình YOLOv8 cho bài toán object detection với đề tài nhận diện và phân loại trái cây.
@@ -437,7 +437,7 @@ Biểu đồ metrics/mAP50(B) mô tả chỉ số mean Average Precision@0.5 (mA
 mAP50 là trung bình AP của tất cả C lớp:
 
 • Giao điểm trên hợp nhất (IoU): IoU là một phép đo định lượng sự chồng chéo giữa hộp giới hạn dự đoán và hộp giới hạn thực tế. Nó đóng vai trò cơ bản trong việc đánh giá độ chính xác của việc định vị đối tượng.
-
+![](img/1010.jpg)
 Trong đó:
 
  • Area of Overlap là diện tích vùng giao nhau giữa predicted bounding box và ground truth. 
@@ -451,13 +451,13 @@ Biểu đồ metrics/mAP50–95(B) thể hiện mean Average Precision@0.5:0.95 
 Confusion Matrix:
 
 Một phương pháp tốt hơn để đánh giá performance của mô hình phân lớp đó là confusion matrix (ma trận nhầm lẫn). Ý tưởng chính là đếm số lần phần tử thuộc class A bị phân loại nhầm vào class B. Để thực hiện tính toán ma trận nhầm lẫn, đầu tiên bạn phải có kết quả các dự đoán và so sánh với nhãn thật của nó. Nghĩa là chúng ta phải dự đoán trên tập test, sau đó dúng kết quả dự đoán này để so sánh với nhãn ban đầu.
-
+![](img/11.jpg)
 Recall-Confidence Curve: (Đường cong Recall theo Confidence) là một biểu đồ thể hiện mối quan hệ giữa:
 
 Trục X: Ngưỡng độ tin cậy (confidence threshold) – tức là mức độ chắc chắn của mô hình khi đưa ra dự đoán (từ 0 đến 1).
 
 Trục Y: Recall – tỷ lệ các đối tượng đúng đã được mô hình phát hiện ra.
-
+![](img/12.jpg)
 Mô hình hoạt động rất tốt ở các confidence thấp (recall cao gần 1.0), tức là hiếm khi bỏ sót đối tượng nếu không quá khắt khe với ngưỡng tin cậy.
 
 Lớp Banana cần cải thiện, vì recall giảm nhanh nhất khi tăng confidence, cho thấy mô hình ít tự tin hoặc dễ nhầm lẫn ở lớp này.
@@ -473,7 +473,7 @@ Mô hình hoạt động tốt với Apple và Orange, nhưng cần cải thiệ
 Với ngưỡng confidence ~0.98, precision toàn bộ các lớp đạt gần 1.00, nhưng có thể làm giảm recall (vì bỏ sót dự đoán không chắc chắn).
 
 Precision-Recall Curve: là một công cụ đánh giá hiệu suất của mô hình phân loại nhị phân (hoặc đa lớp) đặc biệt hiệu quả trong các bài toán mất cân bằng lớp (imbalanced classes) — khi một lớp có số lượng mẫu nhiều hơn đáng kể so với các lớp còn lại.
-
+![](img/13.jpg)
 Trục X – Recall: Tỷ lệ phát hiện đúng trên tổng số đối tượng thực tế
 
 chạy từ 0.0 (không tìm được gì) tới 1.0 (tìm được hết).
@@ -481,7 +481,7 @@ chạy từ 0.0 (không tìm được gì) tới 1.0 (tìm được hết).
 Trục Y – Precision: Tỷ lệ dự đoán đúng trên tổng số dự đoán
 
 chạy từ 0.0 tới 1.0.
-
+![](img/14.jpg)
 F1-score :
 
 Điểm F1: Điểm F1 là giá trị trung bình hài hòa của độ chính xác và độ thu hồi, cung cấp đánh giá cân bằng về hiệu suất của mô hình trong khi xem xét cả kết quả dương tính giả và kết quả âm tính giả.
@@ -496,7 +496,7 @@ Precision =  (TP = Dự đoán đúng, FP = Dự đoán sai)
 
 Recall =  (FN = Bỏ sót đúng)
 
-.
+.![](img/1515.jpg)
 
 Nhãn lô xác thực (val_batchX_labels.jpg): Những hình ảnh này mô tả nhãn sự thật cơ bản cho các lô riêng biệt từ tập dữ liệu xác thực. Chúng cung cấp hình ảnh rõ ràng về các đối tượng và vị trí tương ứng của chúng theo tập dữ liệu.
 
